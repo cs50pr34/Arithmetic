@@ -24,3 +24,78 @@ body {
 .navbar a:hover{
     background-color: rgba(6, 40, 40, 0.9);
 }
+
+.equation-screen {
+    width: 60%;
+    margin:30px auto;
+    background-color:rgb(200, 230, 246);
+    border-radius: 30px;
+    padding: 30px;
+}
+
+.selection-bar{
+    display: flex;
+    text-align: right;
+    justify-content: right;
+}
+
+.question-number{
+    margin: 0;
+    padding-top: 0;
+}
+
+.equation-container{
+    display: flex;
+    align-items: center;
+}
+
+.box{
+    display: flex;
+    width: 150px;
+    height: 150px;
+    background-color: rgb(242, 239, 239);
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+}
+.operator{
+    display: flex;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(242, 239, 239);
+    justify-content: center;
+    align-items:center;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 50px;
+}
+.answer-box{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(242, 239, 239);
+    justify-content: center;
+    align-items: center;
+    font-size: 90px;
+}
+
+#start-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(157, 221, 157);
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
+}
+
+#timer-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    width: 120px;
+    height: 30px;
+    color: red;
+    font-size: 20px;
+    border-radius: 5px;
+}
