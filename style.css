@@ -28,7 +28,7 @@ body {
 
 .equation-screen {
     width: 60%;
-    margin:30px auto;
+    margin: 30px auto;
     background-color:rgb(200, 230, 246);
     border-radius: 30px;
     padding: 30px;
@@ -107,6 +107,15 @@ body {
     box-sizing: border-box;
 }
 
+.events{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+
 #start-btn{
     display: flex;
     justify-content: center;
@@ -115,10 +124,12 @@ body {
     width: 80px;
     height: 80px;
     border-radius: 40px;
+    border: solid 2px rgb(4, 73, 4);
 }
 
-#timer-display{
+#timer{
     display: flex;
+    margin-top: 5px;
     justify-content: center;
     align-items: center;
     background-color: black;
@@ -127,4 +138,5 @@ body {
     color: red;
     font-size: 20px;
     border-radius: 5px;
+
 }

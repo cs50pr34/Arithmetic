@@ -2,7 +2,7 @@
 <html lang= "en">
 <head>
     <meta charset="UTF-8">
-    <title> Division</title>
+    <title> Division </title>
     <link rel = "stylesheet" href="style.css">
 </head>
 <body>
@@ -15,5 +15,32 @@
             <li><a href="division.html">Division</a></li>
         </ul>
     </nav>
+    <div class="equation-screen">
+        <div class="selection-bar">
+            <select id="level">
+                <option value="1"> Level 1 </option>
+                <option value="2"> Level 2 </option>
+                <option value="3"> Level 3 </option>
+            </select>
+        </div>
+        <div class="question-number">
+            <h2> Question 1/10</h2>
+        </div>
+        <div class="equation-container">
+            <div class="box" id="numOne">?</div>
+            <div class="operator">&divide;</div>
+            <div class="box" id="numTwo">?</div>
+            <div class="operator">=</div>
+
+            <div class="answer-group">
+                <input type="number" class="answer-box" id="answer" placeholder="?" disabled>
+                <br> <button class="arrow-key"> > </button>
+            </div>
+        </div>
+        <div class="events">
+            <button id="start-btn"> Start </button>
+            <div id="timer"> 00:00 </div>
+        </div>
+    </div>
 </body>
 </html>
