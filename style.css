@@ -92,7 +92,7 @@ body {
     box-sizing: border-box;
 }
 
-.arrow-key{
+#arrow-key{
     position: absolute;
     top: 100%;
     right: 0;
