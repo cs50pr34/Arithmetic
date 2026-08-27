@@ -7,6 +7,11 @@ const timeEl = document.getElementById("timer");
 const currentLevel = document.getElementById("level");
 const questionUpdate = document.querySelector(".question-number h2");
 const pageTitle = document.title.toLowerCase();
+const scoreBoard = document.getElementById("scoreBoard");
+const accuracyText = document.getElementById("accuracy");
+const timingData = document.getElementById("timing");
+
+
 
 let currentQuestion = 1;
 let timeInterval = null;
@@ -159,7 +164,12 @@ function checkAnswer() {
             submission.disabled = true;
             answerInput.disabled = true;
             startButton.textContent = "Restart";
-            alert(`\nScore: ${score}/10. Time: ${secondsPassed}s`);
+            accuracyText.textContent = `Accuracy: ${score}/10`;
+            timingData.textContent = `Time Taken: ${secondsPassed}s`;
+            scoreBoard.classList.add("active");
+            scoreBoard.addEventListener("click", () => {
+                scoreBoard.classList.remove("active");
+            })
         }
 
     }

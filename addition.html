@@ -9,13 +9,21 @@
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="addition.html">Addition</a></li>
+            <li><a href="addition.html" class="active">Addition</a></li>
             <li><a href="subtraction.html">Subtraction</a></li>
             <li><a href="multiplication.html">Multiplication</a></li>
             <li><a href="division.html">Division</a></li>
         </ul>
     </nav>
+
+
     <div class="equation-screen">
+        <div id="scoreBoard" class="pop-up">
+            <h2 class="pop-up-title">Score Board</h2>
+            <div id="accuracy" class="stat">Accuracy: 0/10</div>
+            <div id="timing" class="stat">Time: 0s</div>
+            <p class="close-inst">Click to close</p>
+        </div>
         <div class="selection-bar">
             <select id="level">
                 <option value="1"> Level 1 </option>
@@ -31,7 +39,6 @@
             <div class="operator">+</div>
             <div class="box" id="numTwo">?</div>
             <div class="operator">=</div>
-
             <div class="answer-group">
                 <input type="number" class="answer-box" id="answer" placeholder="?" disabled>
                 <br> <button id="arrow-key"> > </button>

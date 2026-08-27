@@ -5,12 +5,14 @@ body {
 
 .navbar ul {
     list-style-type: none;
-    background-color: rgba(9, 48, 36, 0.8);
+    background-color: rgba(14, 40, 101, 0.962);
+    backdrop-filter: blur(15px);
     gap: 30px;
     display: flex;
     padding: 0px;
     margin: 0px;
 }
+
 .navbar a{
     display: block;
     color: white;
@@ -23,7 +25,13 @@ body {
 }
 
 .navbar a:hover{
-    background-color: rgba(6, 40, 40, 0.9);
+    background-color: rgba(15, 30, 60, 0.8);
+}
+
+.navbar a.active{
+    color: #ffffff;
+    background: rgb(21, 31, 87);
+    box-shadow: 2px 1px 2px 0px rgba(0, 0, 0, 0.75);
 }
 
 .equation-screen {
@@ -57,7 +65,7 @@ body {
     background-color: rgb(242, 239, 239);
     justify-content: center;
     align-items: center;
-    font-size: 90px;
+    font-size: 52px;
     box-sizing: border-box;
 }
 .operator{
@@ -138,5 +146,54 @@ body {
     color: red;
     font-size: 20px;
     border-radius: 5px;
+}
 
+.equation-screen {
+    position: relative;
+}
+
+.pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(243, 192, 125);
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    width: 70%;
+    height: 50%;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.pop-up.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.pop-up-title {
+    font-size: 35px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.stat {
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.close-inst {
+    font-size: 18px;
+    margin-top: 0px;
+    font-weight: 400;
+    color: rgb(51, 50, 50);
+    font-style: italic;
 }
