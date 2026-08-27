@@ -226,3 +226,9 @@ errorInfo.addEventListener("click",() => {
     errorInfo.classList.remove("active");
     answerInput.focus();
 });
+
+answerInput.addEventListener("input", (e) => {
+    e.target.value = e.target.value
+    .replace(/[^0-9.]/g, '') //Removes non-numeric characters except decimal points
+    .replace(/(\..*?)\..*/g, '$1'); //Allows only one decimal point
+});

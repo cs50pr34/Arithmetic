@@ -7,7 +7,6 @@ body {
     list-style-type: none;
     background-color: rgba(14, 40, 101, 0.962);
     backdrop-filter: blur(15px);
-    gap: 30px;
     display: flex;
     padding: 0px;
     margin: 0px;
@@ -20,12 +19,12 @@ body {
     font-size: 20px;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 70px;
+    padding-right: 70px;
 }
 
 .navbar a:hover{
-    background-color: rgba(15, 30, 60, 0.8);
+    background-color: rgba(21, 44, 90, 0.8);
 }
 
 .navbar a.active{
@@ -153,12 +152,21 @@ body {
     position: relative;
 }
 
+#scoreBoard {
+    background-color: rgb(196, 231, 113);
+    border: solid 2px rgb(20, 28, 1);
+}
+
+#errorInfo {
+    background-color: rgb(247, 119, 110);
+    border: solid 2px rgb(64, 7, 7);
+}
+
 .pop-up {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(243, 192, 125);
     padding: 20px;
     border-radius: 0px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
