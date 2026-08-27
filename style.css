@@ -128,11 +128,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(157, 221, 157);
+    background-color: rgb(144, 214, 144);
     width: 80px;
     height: 80px;
     border-radius: 40px;
-    border: solid 2px rgb(4, 73, 4);
+    border: solid 2px rgb(5, 50, 5);
+    font-weight: 600;
 }
 
 #timer{
@@ -170,6 +171,7 @@ body {
     opacity: 0;
     pointer-events: none;
     z-index: 1000;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .pop-up.active {

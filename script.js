@@ -10,6 +10,8 @@ const pageTitle = document.title.toLowerCase();
 const scoreBoard = document.getElementById("scoreBoard");
 const accuracyText = document.getElementById("accuracy");
 const timingData = document.getElementById("timing");
+const errorInfo = document.getElementById("errorInfo");
+const errorMessage = document.getElementById("errorMessage");
 
 
 
@@ -140,9 +142,10 @@ function stopTimer() {
 }
 
 function checkAnswer() {
+    const answerGiven = answerInput.value.trim();
+    const userAnswer = parseFloat(answerGiven);
 
     if(!isGameActive) return;
-    const userAnswer = parseFloat(answerInput.value);
 
     if(userAnswer === correctAnswer) 
     {
@@ -167,18 +170,32 @@ function checkAnswer() {
             accuracyText.textContent = `Accuracy: ${score}/10`;
             timingData.textContent = `Time Taken: ${secondsPassed}s`;
             scoreBoard.classList.add("active");
-            scoreBoard.addEventListener("click", () => {
-                scoreBoard.classList.remove("active");
-            })
         }
 
     }
     else 
     {
         isFirstAttempt = false;
-        alert("Incorrect answer. Try again!");
+        const isWholeNumber = (correctAnswer % 1 === 0);
+        const userUsedDecimal = answerGiven.includes(".");
+        const userDecimals = userUsedDecimal ? answerGiven.split(".")[1].length : 0;
+        if(isWholeNumber && userUsedDecimal)
+        {
+            errorMessage.textContent = "Please answer with a whole number.";
+        }
+        else if(!isWholeNumber && userDecimals > 1)
+        {
+            errorMessage.textContent = "Please round to the nearest tenth.";
+        }
+        else if(!isWholeNumber && !userUsedDecimal) {
+            errorMessage.textContent = "Please provide a proper answer rounded to the nearest tenth.";
+        }
+        else
+        {
+            errorMessage.textContent = "Keep trying until you get it right!";
+        }
+        errorInfo.classList.add("active");
         answerInput.value = "";
-        answerInput.focus();
     }
 }
 
@@ -199,4 +216,13 @@ answerInput.addEventListener("keypress", (event) => {
     if(event.key === "Enter") {
         checkAnswer();
     }
+});
+
+scoreBoard.addEventListener("click",() => {
+    scoreBoard.classList.remove("active");
+});
+
+errorInfo.addEventListener("click",() => {
+    errorInfo.classList.remove("active");
+    answerInput.focus();
 });
