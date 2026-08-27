@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang= "en">
-<head>
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YWVS1L8H4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YWVS1L8H4D');
+</script>
     <meta charset="UTF-8">
     <title>Addition</title>
     <link rel = "stylesheet" href="style.css">
@@ -15,6 +23,21 @@
             <li><a href="division.html">Division</a></li>
         </ul>
     </nav>
+    
+    <div id="reportBar" class="sidebar">
+        <button id="reportBtn">Report</button>
+        <div class="report-content">
+            <h2>Report</h2>
+            <div id="gamesList">
+                <p>No games completed yet!</p>
+            </div>
+            <div class="statsReport">
+                <p id="avgTime">Average Time: N/A</p>
+                <p id="bestTime">Best Time: N/A</p>
+            </div>
+        </div>
+    </div>
+
     <div class="equation-screen">
         <div id="scoreBoard" class="pop-up">
             <h2 class="pop-up-title">Score Board</h2>

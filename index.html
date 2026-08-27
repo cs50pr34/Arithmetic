@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang= "en">
-<head>
+<head><!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-YWVS1L8H4D"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-YWVS1L8H4D');
+</script>
     <meta charset="UTF-8">
     <title> Basic Arithmetic</title>
     <link rel = "stylesheet" href="style.css">
@@ -15,5 +23,52 @@
             <li><a href="division.html">Division</a></li>
         </ul>
     </nav>
+
+    <main class="container">
+        <selection class="intro">
+            <p class="firstLine"> Click any of the operations on the navigation bar to get started!</p>
+            <p class="subtext"> For more info, read below. </p>
+        </selection>
+    </main>
+
+    <section class="operation-description">
+        <div class="add">
+            <h2>Addition</h2>
+            <li><strong>Level 1:</strong> Generates numbers within the range of 1-10 to add.</li>
+            <li><strong>Level 2:</strong> Generates numbers within the range of 10 to 100 to add.</li>
+            <li><strong>Level 3:</strong> Generates numbers with decimal places to add. Please make sure to round to the nearest 10th!</li>
+        </div>
+        <div class="subtract">
+            <h2>Subtraction</h2>
+            <li><strong>Level 1:</strong> Generates numbers within the range of 1-10 to subtract.</li>
+            <li><strong>Level 2:</strong> Generates numbers within the range of 10 to 100 to subtract.</li>
+            <li><strong>Level 3:</strong> Generates numbers with decimal places to subtract. Please make sure to round to the nearest 10th!</li>
+        </div>
+        <div class="multiply">
+            <h2>Multiplication</h2>
+            <li><strong>Level 1:</strong> Generates numbers within the range of 1-10 to multiply.</li>
+            <li><strong>Level 2:</strong> Generates numbers within the range of 2 to 20 to multiply.</li>
+            <li><strong>Level 3:</strong> Generates numbers with decimal places to multiply. Please make sure to round to the nearest 10th!</li>
+        </div>
+        <div class="divide">
+            <h2>Division</h2>
+            <li><strong>Level 1:</strong> Generates numbers within the range of 2-20 to divide.</li>
+            <li><strong>Level 2:</strong> Generates numbers within the range of 101 to 200 to divide.</li>
+            <li><strong>Level 3:</strong> Generates numbers with decimal places to divide. Please make sure to round to the nearest 10th!</li>
+        </div>
+
+        <div class="features">
+            <h2>How to Use Features</h2>
+            <li>Click the operation of your choice from the navigation bar on the top</li>
+            <li>Select the difficulty level and press the Start button to generate 10 questions on that operation</li>
+            <li>You will be presented with notifications when you get an incorrect answer</li>
+            <li>It may let you know if you incorrectly type in a whole number or decimal</li>
+            <li>When finished with the 10 questions, you will see a pop-up presenting your results</li>
+            <li>Click the sidebar on the right to get a report on your accuracy and timing anytime</li>
+            <li>The sidebar will show up to 5 rounds of your performance</li>
+        </div>
+    </section>
+
+
 </body>
 </html>

@@ -12,7 +12,11 @@ const accuracyText = document.getElementById("accuracy");
 const timingData = document.getElementById("timing");
 const errorInfo = document.getElementById("errorInfo");
 const errorMessage = document.getElementById("errorMessage");
-
+const reportBar = document.getElementById("reportBar");
+const reportBtn = document.getElementById("reportBtn");
+const gamesList = document.getElementById("gamesList");
+const avgTime = document.getElementById("avgTime");
+const bestTime = document.getElementById("bestTime");
 
 
 let currentQuestion = 1;
@@ -22,7 +26,7 @@ let secondsPassed = 0;
 let correctAnswer = 0;
 let score = 0;
 let isFirstAttempt = true;
-
+let gamesCompleted = [];
 
 
 function getOperation() {
@@ -170,6 +174,7 @@ function checkAnswer() {
             accuracyText.textContent = `Accuracy: ${score}/10`;
             timingData.textContent = `Time Taken: ${secondsPassed}s`;
             scoreBoard.classList.add("active");
+            updateReport(secondsPassed, score);
         }
 
     }
@@ -198,6 +203,45 @@ function checkAnswer() {
         answerInput.value = "";
     }
 }
+
+function updateReport(timeTaken, accuracy) {
+    gamesCompleted.unshift({ time: timeTaken, score: accuracy});
+    if(gamesCompleted.length > 5) {
+        gamesCompleted.pop();
+    }
+
+    let historyItems = "";
+    gamesCompleted.forEach((game, index) => {
+        let label = `${index} Rounds ago`;
+        if(index === 0) {
+            label = "Current Round";
+        }
+        if(index === 1) {
+            label = "Last Round";
+        }
+        historyItems += `
+            <div class="report-data">
+                <h3>${label}</h3>
+                <p>Time: ${game.time}s</p>
+                <p>Score: ${game.score}/10</p>
+            </div>
+            `;
+    });
+    gamesList.innerHTML = historyItems;
+    let totalSeconds = 0;
+    let shortestTime = gamesCompleted[0].time;
+    gamesCompleted.forEach(game => {
+        totalSeconds += game.time;
+        if(game.time < shortestTime) {
+            shortestTime = game.time;
+        }
+    });
+    let averageTime = (totalSeconds / gamesCompleted.length).toFixed(1);
+    console.log(`Average Time: ${averageTime}s, Shortest Time: ${shortestTime}s`);
+    avgTime.textContent = `Average Time: ${averageTime}s`;
+    bestTime.textContent = `Shortest Time: ${shortestTime}s`;
+}
+
 
 startButton.addEventListener("click", () => {
     isGameActive = true;
@@ -231,4 +275,8 @@ answerInput.addEventListener("input", (e) => {
     e.target.value = e.target.value
     .replace(/[^0-9.]/g, '') //Removes non-numeric characters except decimal points
     .replace(/(\..*?)\..*/g, '$1'); //Allows only one decimal point
+});
+
+reportBtn.addEventListener("click", () => {
+    reportBar.classList.toggle("open");
 });
